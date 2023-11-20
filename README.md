@@ -48,7 +48,7 @@ Explain how to use your application or library. Include examples if needed.
 ## Features
 
 - All Response Types Like Success, Error, unauthorized,  or Forbidden By Permission Have Same Response You  Can Check Handler and BaseController
-- [Feature 2]
+- This project utilizes Laravel's authorization system with two separate tables for Admin and Users. We've implemented this using the `laravel-permission` package to manage roles and permissions.
 - [Feature 3]
 
 ## Contributing
