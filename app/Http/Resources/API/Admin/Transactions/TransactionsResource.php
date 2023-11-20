@@ -4,11 +4,13 @@ namespace App\Http\Resources\API\Admin\Transactions;
 
 use App\Http\Resources\API\Admin\Profile\AdminProfileResource;
 use App\Http\Resources\API\Customer\Profile\CustomerProfileResource;
+use App\Http\Services\TransactionStatusService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class TransactionsResource extends JsonResource
 {
+
     /**
      * Transform the resource into an array.
      *
@@ -23,7 +25,8 @@ class TransactionsResource extends JsonResource
             'due_date' => $this->due_date,
             'vat_percentage' => (float)$this->vat_percentage,
             'is_vat_inclusive' => (boolean)$this->is_vat_inclusive,
-            'status' => $this->status,
+            'status' => TransactionStatusService::excute($this->resource),
+            'total_paid' => array_sum($this->payments()->pluck('amount')->toArray()),
             'payments' => PaymentsResource::collection($this->payments),
             'customer' => new CustomerProfileResource($this->customer),
             'created_by' => new AdminProfileResource($this->admin),
