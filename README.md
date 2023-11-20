@@ -35,10 +35,10 @@ This project is a [brief description].
     php artisan key:generate
     ```
 
-5. Run migrations:
+5. Run migrations && Seeders:
 
     ```bash
-    php artisan migrate
+    php artisan migrate:fresh --seed
     ```
 
 ## Usage
