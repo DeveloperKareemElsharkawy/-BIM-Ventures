@@ -56,6 +56,7 @@ Provide comprehensive instructions on how to utilize your application or library
 - **Resource and Request Usage:** Implemented Resources and Requests for each API request.
 - **Separate Service for Status Logic:** Created a dedicated service to handle status logic as per task requirements.
 - **Admin Operations:** Details on handling payments and transactions from Admins.
+- **Admin Initiator:** Every transaction is recorded exclusively with the details of the admin who initiated it.
 - **Areas for Improvement:** Unit Tests, Controller Repositories, as time constraints limited their implementation.
 
 ## Postman Collection
